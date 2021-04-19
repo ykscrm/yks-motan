@@ -47,7 +47,8 @@ class Client
             $this->_url_obj->setEndpoint(Constants::ENDPOINT_AGENT);
             $this->_endpoint = new Agent($this->_url_obj);
         } else {
-            $this->_endpoint = new Cluster($this->_url_obj);
+            throw new \Exception('motan request error: ' . $this->_url_obj->getRawUrl());
+            //$this->_endpoint = new Cluster($this->_url_obj);
         }
     }
 
